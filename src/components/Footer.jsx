@@ -1,9 +1,15 @@
+// import { navigateToSection } from "../utils/navigation";
 
 export default function Footer() {
     return (
       <footer className="border-t border-white/10 py-8">
         <div className="container-width flex flex-col justify-between gap-4 text-sm text-slate-500 sm:flex-row sm:items-center">
-          <a href="#home" className="font-semibold text-white">
+          <a href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, "", "/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }} className="font-semibold text-white">
             Rahul<span className="text-cyan-400">.</span>
           </a>
           <p>Building useful software, one project at a time.</p>
